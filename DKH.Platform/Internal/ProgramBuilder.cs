@@ -2,18 +2,36 @@ namespace DKH.Platform.Internal;
 
 internal class ProgramBuilder : IProgramBuilder
 {
-    public IProgramBuilder ConfigureServices(Action<WebApplicationBuilder> webBuilder)
+    private readonly HostApplicationBuilder _applicationBuilder;
+    private List<Action<IHost>> _hostConfigurations = [];
+
+    public ProgramBuilder(HostApplicationBuilder applicationBuilder)
     {
-        throw new NotImplementedException();
+        _applicationBuilder = applicationBuilder;
     }
 
-    public IProgramBuilder ConfigureApp(Action<WebApplication> webBuilder)
+    public IProgramBuilder ConfigureServices(Action<IHostApplicationBuilder> configure)
     {
-        throw new NotImplementedException();
+        configure(_applicationBuilder);
+
+        return this;
     }
 
-    public Task<int> RunAsync()
+    public IProgramBuilder ConfigureApp(Action<IHost> configure)
     {
-        throw new NotImplementedException();
+        _hostConfigurations.Add(configure);
+
+        return this;
+    }
+
+    public Task RunAsync()
+    {
+        var host = _applicationBuilder.Build();
+        foreach (var configureHost in _hostConfigurations)
+        {
+            configureHost(host);
+        }
+
+        return host.RunAsync();
     }
 }

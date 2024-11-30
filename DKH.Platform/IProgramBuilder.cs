@@ -2,7 +2,7 @@ namespace DKH.Platform;
 
 public interface IProgramBuilder
 {
-    IProgramBuilder ConfigureServices(Action<WebApplicationBuilder> webBuilder);
-    IProgramBuilder ConfigureApp(Action<WebApplication> webBuilder);
-    Task<int> RunAsync();
+    IProgramBuilder ConfigureServices(Action<IHostApplicationBuilder> configure);
+    IProgramBuilder ConfigureApp(Action<IHost> configure);
+    Task RunAsync();
 }

@@ -6,6 +6,6 @@ public static class PlatformProgram
 {
     public static IProgramBuilder Create(string[] args)
     {
-        return new ProgramBuilder();
+        return new ProgramBuilder(Host.CreateApplicationBuilder(args));
     }
 }
