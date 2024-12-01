@@ -1,9 +1,8 @@
 ﻿using DKH.Platform;
-using DKH.Platform.Redis;
+using DKH.Platform.Http;
 
 await PlatformProgram
-    .Create(args)
-    .ConfigureServices(_ => { })
-    .ConfigureApp(_ => { })
-    .AddRedis(new RedisSettings())
+    .CreateWeb(args)
+    .AddHttpServer(5070)
+    .Build()
     .RunAsync();

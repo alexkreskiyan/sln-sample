@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.Platform.Redis", "DKH.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.DemoApp", "DKH.DemoApp\DKH.DemoApp.csproj", "{3E3883E0-F5F2-4847-B5B7-546EED44AE2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.Platform.GrpcRedisProgram", "DKH.Platform.GrpcRedisProgram\DKH.Platform.GrpcRedisProgram.csproj", "{F5FE2AFE-F505-4314-98BF-758C2C21B474}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.Platform.Http", "DKH.Platform.Http\DKH.Platform.Http.csproj", "{9D4F3040-5045-4BE9-A4E1-CFB8A80A2D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.Platform.Grpc", "DKH.Platform.Grpc\DKH.Platform.Grpc.csproj", "{EF01EB14-2970-4BA0-807F-A7C5B4713DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKH.Platform.Kestrel", "DKH.Platform.Kestrel\DKH.Platform.Kestrel.csproj", "{55B69491-3B70-4A04-8274-4A4B59135B9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,13 +36,17 @@ Global
 		{3E3883E0-F5F2-4847-B5B7-546EED44AE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3883E0-F5F2-4847-B5B7-546EED44AE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3883E0-F5F2-4847-B5B7-546EED44AE2B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5FE2AFE-F505-4314-98BF-758C2C21B474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5FE2AFE-F505-4314-98BF-758C2C21B474}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5FE2AFE-F505-4314-98BF-758C2C21B474}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5FE2AFE-F505-4314-98BF-758C2C21B474}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D4F3040-5045-4BE9-A4E1-CFB8A80A2D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D4F3040-5045-4BE9-A4E1-CFB8A80A2D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D4F3040-5045-4BE9-A4E1-CFB8A80A2D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D4F3040-5045-4BE9-A4E1-CFB8A80A2D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF01EB14-2970-4BA0-807F-A7C5B4713DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF01EB14-2970-4BA0-807F-A7C5B4713DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF01EB14-2970-4BA0-807F-A7C5B4713DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF01EB14-2970-4BA0-807F-A7C5B4713DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B69491-3B70-4A04-8274-4A4B59135B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B69491-3B70-4A04-8274-4A4B59135B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B69491-3B70-4A04-8274-4A4B59135B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B69491-3B70-4A04-8274-4A4B59135B9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

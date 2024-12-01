@@ -8,4 +8,9 @@ public static class PlatformProgram
     {
         return new ProgramBuilder(args);
     }
+
+    public static IWebProgramBuilder CreateWeb(string[] args)
+    {
+        return new WebProgramBuilder(args);
+    }
 }
