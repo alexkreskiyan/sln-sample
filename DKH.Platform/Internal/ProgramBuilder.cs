@@ -1,13 +1,15 @@
+using Microsoft.Extensions.Hosting;
+
 namespace DKH.Platform.Internal;
 
 internal class ProgramBuilder : IProgramBuilder
 {
     private readonly HostApplicationBuilder _applicationBuilder;
-    private List<Action<IHost>> _hostConfigurations = [];
+    private readonly List<Action<IHost>> _hostConfigurations = [];
 
-    public ProgramBuilder(HostApplicationBuilder applicationBuilder)
+    public ProgramBuilder(string[] args)
     {
-        _applicationBuilder = applicationBuilder;
+        _applicationBuilder = Host.CreateApplicationBuilder(args);
     }
 
     public IProgramBuilder ConfigureServices(Action<IHostApplicationBuilder> configure)
@@ -24,7 +26,7 @@ internal class ProgramBuilder : IProgramBuilder
         return this;
     }
 
-    public Task RunAsync()
+    public IHost Build()
     {
         var host = _applicationBuilder.Build();
         foreach (var configureHost in _hostConfigurations)
@@ -32,6 +34,6 @@ internal class ProgramBuilder : IProgramBuilder
             configureHost(host);
         }
 
-        return host.RunAsync();
+        return host;
     }
 }
