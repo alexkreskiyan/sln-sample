@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DKH.Platform.Kestrel\DKH.Platform.Kestrel.csproj" />
       <ProjectReference Include="..\DKH.Platform\DKH.Platform.csproj" />
     </ItemGroup>
 

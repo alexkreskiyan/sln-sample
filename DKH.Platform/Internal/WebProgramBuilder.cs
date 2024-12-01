@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DKH.Platform.Internal;
 
@@ -28,6 +30,18 @@ internal class WebProgramBuilder : IWebProgramBuilder
 
     public WebApplication Build()
     {
+        _applicationBuilder.WebHost.UseKestrel(options =>
+        {
+            var endpoints = options.ApplicationServices.GetRequiredService<
+                IEnumerable<KestrelEndpoint>
+            >();
+            foreach (var endpoint in endpoints)
+            {
+                Console.WriteLine($"Listening on port {endpoint.Port} ({endpoint.Protocol})");
+                options.ListenAnyIP(endpoint.Port, opts => opts.Protocols = endpoint.Protocol);
+            }
+        });
+
         var host = _applicationBuilder.Build();
         foreach (var configureHost in _hostConfigurations)
         {
